@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     const { code } = req.body;
     console.log(11)
     try {
-      const response = await openai.predict(`As a senior blockchain developer, audit the following smart contract: ${code}. Please provide the following sections in your response,a paragraph long "summary" of the contract, a list of "flaws", a list of "fixes", all in markdown format with titles(all caps), bullets, and double spacing between sections.`);
+      const response = await openai.predict(`As a senior blockchain developer, audit the following smart contract: ${code}. Please provide the following sections in your response,a paragraph long "summary" of the contract, a list of "flaws", a list of "fixes", all in markdown format with titles(all caps and bold), bullets, and double spacing between sections.`);
       console.log(response)
       // const auditResult = response.auditResult;
 

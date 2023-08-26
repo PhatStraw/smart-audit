@@ -35,18 +35,18 @@ export default function Home() {
             className="w-full h-64 mb-5 rounded border border-gray-300"
             style={{ fontSize: '16px' }}
           />
-          <button 
-            className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600" 
+          <button
+            className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600"
             onClick={handleAudit}
             disabled={loading}
           >
-            {loading ? 'Loading...' : 'Audit'} 
+            {loading ? <div className="loader"></div> : 'Audit'}
           </button>
         </div>
         <div className="mt-5 shadow-lg bg-white p-5 rounded-lg">
           <ReactMarkdown className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl">
             {result}
-          </ReactMarkdown>  
+          </ReactMarkdown>
         </div>
       </div>
     </div>
