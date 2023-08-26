@@ -4,11 +4,14 @@ import axios from 'axios'
 export default function Home() {
   const [code, setCode] = useState('');
   const [result, setResult] = useState('');
+  const [loading, setLoading] = useState(false); // Add loading state
 
   const handleAudit = async () => {
+    setLoading(true); // Set loading to true when the request starts
     const response = await axios.post('/api/hello', { code });
-    console.log(response)
+    console.log(response);
     setResult(response.data.response);
+    setLoading(false); // Set loading to false when the request finishes
   };
 
   return (
@@ -23,8 +26,9 @@ export default function Home() {
         <button 
           className="py-2 px-4 bg-teal-500 text-white rounded hover:bg-teal-600" 
           onClick={handleAudit}
+          disabled={loading} // Disable the button when loading
         >
-          Audit
+          {loading ? 'Loading...' : 'Audit'} 
         </button>
         <div className="mt-5">
           <ReactMarkdown className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl 2xl:prose-2xl">
