@@ -3,12 +3,12 @@ import { OpenAI } from "langchain/llms/openai";
 
 const openai = new OpenAI({
   openAIApiKey: process.env.NEXT_PUBLIC_CHAT_GPT,
+  temperature: 0
 });
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { code } = req.body;
-    console.log(11);
     try {
       const response = await openai.predict(
         `As a senior blockchain developer, use past information on blockchain exploits and solidity best practices and audit the following smart contract: 
