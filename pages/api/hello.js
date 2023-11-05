@@ -11,12 +11,10 @@ export default async function handler(req, res) {
     const { code } = req.body;
     try {
       const response = await openai.predict(
-        `you are a senior blockchain developer, interviewing for a high paying position. Identify any expoloits and/or security failures for the following smart contract.
+        `you are a senior blockchain developer, interviewing for a high paying position. given this smart contract how could I be exploited? 
         
         smart contract: ${code}
-      
-
-      Use your knowlege from past exploits and best solidity practices to provide your response.`,{
+      `,{
         temperature: 0
       }
       );
