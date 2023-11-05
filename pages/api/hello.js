@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         smart contract: ${code}
       
 
-      Use your knowlege from past exploits and best solidity practices to provide the following sections in your response,a paragraph long "summary" of the contract, a list of "flaws", a list of "fixes", all in markdown format with titles(all caps and bold), bullets, and double spacing between sections.`,{
+      Use your knowlege from past exploits and best solidity practices to provide your response.`,{
         temperature: 0
       }
       );
