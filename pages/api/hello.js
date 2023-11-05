@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     const { code } = req.body;
     try {
       const response = await openai.predict(
-        `you are a senior blockchain developer, interviewing for a high paying position. given this smart contract how could I be exploited? 
+        `you are a senior blockchain developer, interviewing for a high paying position. given this smart contract how could I be exploited? Be sure to include an example of the exploits, if any, and a descriptive summary of the proccess. This is for a well paying job so be sure to do your very best! 
         
         smart contract: ${code}
       `,{
