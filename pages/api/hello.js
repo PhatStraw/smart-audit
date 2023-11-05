@@ -14,9 +14,7 @@ export default async function handler(req, res) {
         `you are a senior blockchain developer, interviewing for a high paying position. given this smart contract how could I be exploited? 
         
         smart contract: ${code}
-      `,{
-        temperature: 0
-      }
+      `
       );
       res.status(200).json({ response });
     } catch (error) {
