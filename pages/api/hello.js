@@ -11,15 +11,14 @@ export default async function handler(req, res) {
     const { code } = req.body;
     try {
       const response = await openai.predict(
-        `As a senior blockchain developer, use past information on blockchain exploits and solidity best practices and audit the following smart contract: 
-
-
-
-      ${code}
-      
+        `you are a senior blockchain developer, interviewing for a high paying position. given this smart contract how could I be exploited? 
+        
+        smart contract: ${code}
       
 
-      Use your knowlege from past exploits and best solidity practices to provide the following sections in your response,a paragraph long "summary" of the contract, a list of "flaws", a list of "fixes", all in markdown format with titles(all caps and bold), bullets, and double spacing between sections.`
+      Use your knowlege from past exploits and best solidity practices to provide the following sections in your response,a paragraph long "summary" of the contract, a list of "flaws", a list of "fixes", all in markdown format with titles(all caps and bold), bullets, and double spacing between sections.`,{
+        temperature: 0
+      }
       );
       res.status(200).json({ response });
     } catch (error) {
